@@ -1,4 +1,4 @@
-# How's Da Movie? — Movie Experience Tracker
+# Popcorn Bucket List
 
 A mobile-first movie-experience rating site modeled after the supplied How's Da Chow screenshots.
 
