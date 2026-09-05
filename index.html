@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#000000" />
+  <title>How's Da Movie? — Movie Experience Tracker</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="How's Da Movie home">
+      <span class="brand-mark">🎬</span>
+      <span class="brand-text"><span>HOW'S DA</span><strong>MOVIE?</strong></span>
+    </a>
+
+    <button class="menu-button" id="menuButton" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <nav class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <a href="#top">Home</a>
+    <a href="#ratings">Ratings</a>
+    <a href="#experiences">Experiences</a>
+    <a href="#add-rating">Add Rating</a>
+  </nav>
+
+  <main id="top" class="container">
+    <section class="hero">
+      <div class="hero-logo" aria-label="How's Da Movie logo">
+        <div class="film-strip">▰ ▰ ▰</div>
+        <div class="hero-script">How's Da</div>
+        <div class="hero-title">Movie?</div>
+        <div class="hero-clapper">🎞️</div>
+      </div>
+
+      <p>
+        Welcome to the official <strong>How's Da Movie?</strong> movie experience
+        rating tracker! Here, our squad documents every cinematic adventure to
+        keep a running record of our favorite <strong>ways to watch movies.</strong>
+        Scroll down to explore our past ratings and see which experiences earned
+        our top scores.
+      </p>
+    </section>
+
+    <section class="toolbar">
+      <input id="searchInput" type="search" placeholder="Search movies, theaters, experiences..." />
+    </section>
+
+    <section class="stats" id="stats">
+      <div class="stat-card">
+        <span>Total</span>
+        <span>Ratings:</span>
+        <strong id="totalRatings">0</strong>
+      </div>
+      <div class="stat-card highest">
+        <span>Highest: <strong id="highestScore">—</strong></span>
+        <strong id="highestEntry">No ratings yet</strong>
+      </div>
+    </section>
+
+    <section id="experiences" class="experience-panel">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">Browse by format</span>
+          <h2>Movie Experiences</h2>
+        </div>
+        <select id="experienceFilter" aria-label="Filter by movie experience">
+          <option value="all">All experiences</option>
+        </select>
+      </div>
+      <div class="experience-chips" id="experienceChips"></div>
+    </section>
+
+    <section id="add-rating" class="add-rating">
+      <h2>Add New Rating</h2>
+      <form id="ratingForm">
+        <div class="field">
+          <label for="reviewer">Reviewer</label>
+          <select id="reviewer" required></select>
+        </div>
+
+        <div class="field">
+          <label for="experience">Movie Experience</label>
+          <select id="experience" required></select>
+        </div>
+
+        <div class="field">
+          <label for="movie">Movie</label>
+          <input id="movie" type="text" placeholder="Oppenheimer, Dune: Part Two..." required />
+        </div>
+
+        <div class="form-row">
+          <div class="field">
+            <label for="score">Score</label>
+            <input id="score" type="number" min="1" max="100" placeholder="1-100" required />
+          </div>
+          <div class="field">
+            <label for="date">Date</label>
+            <input id="date" type="date" required />
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="theater">Theater / Location <span>(optional)</span></label>
+          <input id="theater" type="text" placeholder="AMC, Regal, Birmingham, etc." />
+        </div>
+
+        <div class="field">
+          <label for="comment">Comment <span>(optional)</span></label>
+          <textarea id="comment" placeholder="What made this experience great (or terrible)?"></textarea>
+        </div>
+
+        <button class="publish-button" type="submit">Publish Score</button>
+      </form>
+      <p class="storage-note">This prototype saves ratings in this browser using local storage.</p>
+    </section>
+
+    <section id="ratings" class="reviewers">
+      <div id="reviewerList"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>HOW'S DA MOVIE? • Movie Experience Tracker</p>
+    <button id="resetButton" class="reset-button">Reset demo ratings</button>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
