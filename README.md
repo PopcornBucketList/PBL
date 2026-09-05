@@ -1,7 +1,6 @@
 # Popcorn Bucket List
 
-A mobile-first movie-experience rating site modeled after the supplied How's Da Chow screenshots.
-
+A dedicated site for out reviews of both movies and movie theater experiences
 ## Files
 
 - `index.html` — page structure
